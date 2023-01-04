@@ -10,7 +10,7 @@ namespace Softeng_integration_be.Provider
 		public BaseProvider()
 		{
 			DbContextOptionsBuilder<DataContext> optionsBuilder = new();
-			optionsBuilder.UseNpgsql("Host=localhost;Database=Softeng;Username=postgres;Password=Kennguyen0309!;");
+			optionsBuilder.UseNpgsql("${YOUR_CONNECTION_STRING}");
 			db = new DataContext(optionsBuilder.Options);
 		}
 		public async Task<bool> SaveDataAsync()
